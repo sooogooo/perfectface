@@ -1,0 +1,35 @@
+[project]
+name = "perfectface-ai-service"
+version = "1.0.0"
+description = "AI-powered face analysis service for PerfectFace platform"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+    "opencv-python>=4.9.0.80",
+    "mediapipe>=0.10.9",
+    "numpy>=1.26.3",
+    "pillow>=10.2.0",
+    "pydantic>=2.5.3",
+    "python-dotenv>=1.0.0",
+    "redis>=5.0.1",
+    "aiofiles>=23.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.4",
+    "pytest-asyncio>=0.23.3",
+    "black>=23.12.1",
+    "ruff>=0.1.9",
+    "mypy>=1.8.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W"]
